@@ -15,10 +15,6 @@ app.get('/', (req, res) => {
 const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes);
 
-const entryRoutes = require('./routes/entries');
-app.use('/api/entries', entryRoutes);
-
-
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('MongoDB connected');
